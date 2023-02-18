@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Search for a movie or show" translatesAutoresizingMaskIntoConstraints="NO" id="8xD-Ly-ajO">
-                                <rect key="frame" x="-6" y="103" width="389" height="44"/>
+                                <rect key="frame" x="-6" y="103" width="388" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.1764705882" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.1764705882" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,24 +81,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="e83-Cr-4uc">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="16" y="103" width="361" height="715"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OHi-b2-Udy">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="356.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="356.66666666666669"/>
                                         <subviews>
                                             <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JhV-br-Ar6">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="356.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="356.66666666666669"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ZdW-1I-Ffp">
-                                        <rect key="frame" x="0.0" y="358.66666666666674" width="393" height="356.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="358.66666666666674" width="361" height="356.33333333333326"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V6r-mT-r27">
-                                                <rect key="frame" x="8" y="0.0" width="377" height="986"/>
+                                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V6r-mT-r27">
+                                                <rect key="frame" x="8" y="0.0" width="377" height="1996"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeZ-yj-VBB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="232"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ij-bK-f13">
                                                                 <rect key="frame" x="0.0" y="0.0" width="249" height="23"/>
@@ -111,91 +111,91 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="131" translatesAutoresizingMaskIntoConstraints="NO" id="244-YO-JhM">
-                                                        <rect key="frame" x="0.0" y="69.999999999999943" width="376.33333333333331" height="94"/>
+                                                        <rect key="frame" x="0.0" y="251.99999999999994" width="376.33333333333331" height="232"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Netflix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c79-kl-cwQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="94"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="232"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Snh-Mq-XX6">
-                                                                <rect key="frame" x="180.33333333333337" y="0.0" width="196" height="94"/>
+                                                                <rect key="frame" x="180.33333333333337" y="0.0" width="196" height="232"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="145" translatesAutoresizingMaskIntoConstraints="NO" id="Uei-iy-wum">
-                                                        <rect key="frame" x="0.0" y="183.99999999999994" width="376.33333333333331" height="94"/>
+                                                        <rect key="frame" x="0.0" y="504" width="376.33333333333331" height="232"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hulu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihd-D0-wzY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="94"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="232"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uc2-g4-qWd">
-                                                                <rect key="frame" x="180.33333333333337" y="0.0" width="196" height="94"/>
+                                                                <rect key="frame" x="180.33333333333337" y="0.0" width="196" height="232"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="tea-4f-zLq">
-                                                        <rect key="frame" x="0.0" y="297.99999999999994" width="377" height="94"/>
+                                                        <rect key="frame" x="0.0" y="756" width="377" height="232"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w53-Bo-Wan">
-                                                                <rect key="frame" x="0.0" y="0.0" width="62" height="94"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="62" height="232"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pPB-8b-luw">
-                                                                <rect key="frame" x="181" y="0.0" width="196" height="94"/>
+                                                                <rect key="frame" x="181" y="0.0" width="196" height="232"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="109" translatesAutoresizingMaskIntoConstraints="NO" id="878-i4-XLn">
-                                                        <rect key="frame" x="0.0" y="411.99999999999994" width="377" height="94"/>
+                                                        <rect key="frame" x="0.0" y="1008" width="377" height="232"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HBO Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3k0-3V-qxb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="94"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="232"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vca-uC-GmJ">
-                                                                <rect key="frame" x="181" y="0.0" width="196" height="94"/>
+                                                                <rect key="frame" x="181" y="0.0" width="196" height="232"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="bjJ-gH-eXw">
-                                                        <rect key="frame" x="0.0" y="526" width="376.66666666666669" height="94"/>
+                                                        <rect key="frame" x="0.0" y="1260" width="376.66666666666669" height="232"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disney+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phw-MW-ucn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="61.666666666666664" height="94"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="61.666666666666664" height="232"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AoV-MV-6gc">
-                                                                <rect key="frame" x="180.66666666666663" y="0.0" width="196" height="94"/>
+                                                                <rect key="frame" x="180.66666666666663" y="0.0" width="196" height="232"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="116" translatesAutoresizingMaskIntoConstraints="NO" id="8Ye-oV-B9U">
-                                                        <rect key="frame" x="0.0" y="640" width="377" height="94"/>
+                                                        <rect key="frame" x="0.0" y="1512" width="377" height="232"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peacock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDm-GN-22v">
-                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="94"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="232"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uMY-Iw-Fej">
-                                                                <rect key="frame" x="181" y="0.0" width="196" height="94"/>
+                                                                <rect key="frame" x="181" y="0.0" width="196" height="232"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1q-dl-Ced">
-                                                        <rect key="frame" x="0.0" y="754" width="377" height="232"/>
+                                                        <rect key="frame" x="0.0" y="1763.9999999999998" width="377" height="232"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hb4-t7-AKI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="377" height="232"/>
@@ -211,9 +211,6 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="244-YO-JhM" firstAttribute="top" secondItem="CeZ-yj-VBB" secondAttribute="bottom" constant="100" id="rl7-eF-8hn"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <viewLayoutGuide key="contentLayoutGuide" id="h4T-Vf-Jhh"/>
@@ -226,8 +223,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="K12-r3-CsP" firstAttribute="bottom" secondItem="e83-Cr-4uc" secondAttribute="bottom" id="6EY-Ht-qNN"/>
-                            <constraint firstItem="e83-Cr-4uc" firstAttribute="leading" secondItem="K12-r3-CsP" secondAttribute="leading" id="OXK-OK-L1C"/>
-                            <constraint firstAttribute="trailing" secondItem="e83-Cr-4uc" secondAttribute="trailing" id="x6A-Zu-JCs"/>
+                            <constraint firstItem="e83-Cr-4uc" firstAttribute="leading" secondItem="K12-r3-CsP" secondAttribute="leading" constant="16" id="OXK-OK-L1C"/>
+                            <constraint firstAttribute="trailing" secondItem="e83-Cr-4uc" secondAttribute="trailing" constant="16" id="x6A-Zu-JCs"/>
                             <constraint firstItem="e83-Cr-4uc" firstAttribute="top" secondItem="K12-r3-CsP" secondAttribute="top" id="yy0-wr-jfH"/>
                         </constraints>
                     </view>
@@ -237,6 +234,7 @@
                         <outlet property="disneyCheck" destination="AoV-MV-6gc" id="aqB-39-uFJ"/>
                         <outlet property="hboCheck" destination="Vca-uC-GmJ" id="KLl-Jn-Ihs"/>
                         <outlet property="huluCheck" destination="uc2-g4-qWd" id="hC3-qY-qm6"/>
+                        <outlet property="mainStackView" destination="e83-Cr-4uc" id="FV0-Vj-S0i"/>
                         <outlet property="movieDescription" destination="hb4-t7-AKI" id="2yM-kd-dKi"/>
                         <outlet property="movieImage" destination="JhV-br-Ar6" id="eyR-mA-rwH"/>
                         <outlet property="movieImageStackView" destination="OHi-b2-Udy" id="rOb-GO-GTa"/>

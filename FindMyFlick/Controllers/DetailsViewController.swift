@@ -8,6 +8,8 @@
 import UIKit
 
 class DetailsViewController: UIViewController, UIScrollViewDelegate {
+    @IBOutlet weak var mainStackView: UIStackView!
+    
     
     @IBOutlet weak var movieImageStackView: UIStackView!
     
@@ -35,10 +37,7 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollPage: UIScrollView!
     
-    var p = [NSLayoutConstraint]()
-    var l = [NSLayoutConstraint]()
-    var initialOrientation = true
-    var isInPortrait = false
+  
     
     
     override func viewDidLoad() {
@@ -54,25 +53,18 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
         performStreamingServicesRequest()
         scrollPage.contentSize = CGSizeMake(1000, 500)
         
-        
-    }
     
-    override func viewWillLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        if initialOrientation {
-            initialOrientation = false
-            if view.frame.width > view.frame.height {
-                isInPortrait = false
-            } else {
-                isInPortrait = true
-            }
-            view.setOrientation(p, l)
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            mainStackView.axis = .horizontal
         } else {
-            if view.orientationHasChanged(&isInPortrait) {
-                view.setOrientation(p, l)
-            }
+            mainStackView.axis = .vertical
         }
     }
+    
+   
     func updateImage(imageURL: String?) {
         if let url = URL(string: imageURL!){
             let session = URLSession(configuration: .default)
@@ -196,40 +188,3 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 }
-extension UIView {
-    public func turnOffAutoResizing() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        for view in self.subviews as [UIView] {
-           view.translatesAutoresizingMaskIntoConstraints = false
-        }
-    }
-    public func orientationHasChanged(_ isInPortrait:inout Bool) -> Bool {
-        if self.frame.width > self.frame.height {
-            if isInPortrait {
-                isInPortrait = false
-                return true
-            }
-        } else {
-            if !isInPortrait {
-                isInPortrait = true
-                return true
-            }
-        }
-        return false
-    }
-    public func setOrientation(_ p:[NSLayoutConstraint], _ l:[NSLayoutConstraint]) {
-        NSLayoutConstraint.deactivate(l)
-        NSLayoutConstraint.deactivate(p)
-        if self.bounds.width > self.bounds.height {
-            NSLayoutConstraint.activate(l)
-        } else {
-            NSLayoutConstraint.activate(p)
-        }
-    }
-}
-
-
-
-
-
-
