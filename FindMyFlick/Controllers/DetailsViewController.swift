@@ -9,6 +9,10 @@ import UIKit
 
 class DetailsViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var movieImageStackView: UIStackView!
+    
+    @IBOutlet weak var scrollPageStackView: UIStackView!
+    
     @IBOutlet weak var movieImage: UIImageView!
     
     @IBOutlet weak var movieTitle: UILabel!
@@ -48,12 +52,26 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
         movieTitle.text = currentMovie?.title
         movieDescription.text = currentMovie?.description
         performStreamingServicesRequest()
+        scrollPage.contentSize = CGSizeMake(1000, 500)
+        
+        
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let foregroundHeight = scrollPage.contentSize.height - CGRectGetHeight(scrollPage.bounds)
-        let percentageScroll = scrollPage.contentOffset.y / foregroundHeight
-        scrollPage.contentOffset = CGPoint(x: 0, y: foregroundHeight * percentageScroll)
+    override func viewWillLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if initialOrientation {
+            initialOrientation = false
+            if view.frame.width > view.frame.height {
+                isInPortrait = false
+            } else {
+                isInPortrait = true
+            }
+            view.setOrientation(p, l)
+        } else {
+            if view.orientationHasChanged(&isInPortrait) {
+                view.setOrientation(p, l)
+            }
+        }
     }
     func updateImage(imageURL: String?) {
         if let url = URL(string: imageURL!){
@@ -178,4 +196,40 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 }
-   
+extension UIView {
+    public func turnOffAutoResizing() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        for view in self.subviews as [UIView] {
+           view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    public func orientationHasChanged(_ isInPortrait:inout Bool) -> Bool {
+        if self.frame.width > self.frame.height {
+            if isInPortrait {
+                isInPortrait = false
+                return true
+            }
+        } else {
+            if !isInPortrait {
+                isInPortrait = true
+                return true
+            }
+        }
+        return false
+    }
+    public func setOrientation(_ p:[NSLayoutConstraint], _ l:[NSLayoutConstraint]) {
+        NSLayoutConstraint.deactivate(l)
+        NSLayoutConstraint.deactivate(p)
+        if self.bounds.width > self.bounds.height {
+            NSLayoutConstraint.activate(l)
+        } else {
+            NSLayoutConstraint.activate(p)
+        }
+    }
+}
+
+
+
+
+
+
