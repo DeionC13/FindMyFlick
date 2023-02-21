@@ -37,7 +37,11 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollPage: UIScrollView!
     
-  
+    
+    
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
     
     
     override func viewDidLoad() {
@@ -51,9 +55,16 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
         movieTitle.text = currentMovie?.title
         movieDescription.text = currentMovie?.description
         performStreamingServicesRequest()
+        scrollPage.isDirectionalLockEnabled = true
+        scrollPage.alwaysBounceVertical = true
         scrollPage.contentSize = CGSizeMake(1000, 500)
         
     
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.scrollPage.contentSize.width = self.scrollPage.frame.size.width
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -66,6 +77,7 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
     
    
     func updateImage(imageURL: String?) {
+        
         if let url = URL(string: imageURL!){
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in

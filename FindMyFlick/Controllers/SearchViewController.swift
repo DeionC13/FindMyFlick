@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class SearchViewController: UIViewController {
-    
+   
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    @IBOutlet weak var movieTitle: CLTypingLabel!
+    
+    
+
     
     var activityView: UIActivityIndicatorView?
     var movieManager = MovieManager()
@@ -22,6 +29,9 @@ class SearchViewController: UIViewController {
         movieManager.delegate = self
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        movieTitle.text = "Find  My  Flick"
+        
+        movieTitle.charInterval = 0.3
     }
     
 }
@@ -53,9 +63,11 @@ extension SearchViewController: MovieManagerDelegate {
 extension SearchViewController: UISearchBarDelegate {
     func showActivityIndicator() {
         activityView = UIActivityIndicatorView(style: .large)
-        activityView?.center = self.view.center
-        activityView?.color = UIColor(red: 0.18, green: 0.14, blue: 0.14, alpha: 1.00)
         
+        
+        
+        activityView?.color = UIColor(red: 0.18, green: 0.14, blue: 0.14, alpha: 1.00)
+        activityView?.center = self.view.center
 
         self.view.addSubview(activityView!)
         activityView?.startAnimating()
@@ -68,8 +80,10 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let userSearch = searchBar.text {
+            searchBar.resignFirstResponder()
             movieManager.fetchMovie(for: userSearch)
             showActivityIndicator()
+            
             
         }
     }

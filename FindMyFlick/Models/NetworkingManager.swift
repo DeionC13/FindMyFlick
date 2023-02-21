@@ -8,7 +8,7 @@
 import Foundation
 
 struct NetworkingManager {
-    var urlString: String
+    
     
     func performRequest(for urlString: String)  -> Data? {
         var sentData: Data?

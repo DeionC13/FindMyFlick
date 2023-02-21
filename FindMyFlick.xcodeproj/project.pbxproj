@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3694B05C63FAD030F0872CDF /* Pods_FindMyFlick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC25C1646AFFCEBEB13EB87 /* Pods_FindMyFlick.framework */; };
+		CC05A88629A29B3100864A57 /* MovieNite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC05A88529A29B3100864A57 /* MovieNite.ttf */; };
 		CC1261A529872F8A00B93AE7 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1261A429872F8A00B93AE7 /* MovieModel.swift */; };
 		CC3444DA29874D8200823F39 /* ResultsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3444D829874D8200823F39 /* ResultsListViewController.swift */; };
 		CC3444DB29874D8200823F39 /* ResultsListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC3444D929874D8200823F39 /* ResultsListViewCell.xib */; };
+		CC5A948929A1421A002B696A /* StreamingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5A948829A1421A002B696A /* StreamingManager.swift */; };
 		CC9159C32989B12000014BE4 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9159C22989B12000014BE4 /* DetailsViewController.swift */; };
 		CCA5EFBE2987562A00F586C1 /* ResultsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5EFBD2987562A00F586C1 /* ResultsListViewCell.swift */; };
 		CCB10640298C0F13002D6AA5 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB1063F298C0F13002D6AA5 /* NetworkingManager.swift */; };
@@ -26,9 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AC25C1646AFFCEBEB13EB87 /* Pods_FindMyFlick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindMyFlick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74DF1469C233F855E819AC6 /* Pods-FindMyFlick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMyFlick.debug.xcconfig"; path = "Target Support Files/Pods-FindMyFlick/Pods-FindMyFlick.debug.xcconfig"; sourceTree = "<group>"; };
+		CC05A88529A29B3100864A57 /* MovieNite.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MovieNite.ttf; sourceTree = "<group>"; };
 		CC1261A429872F8A00B93AE7 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		CC3444D829874D8200823F39 /* ResultsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsListViewController.swift; sourceTree = "<group>"; };
 		CC3444D929874D8200823F39 /* ResultsListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsListViewCell.xib; sourceTree = "<group>"; };
+		CC5A948829A1421A002B696A /* StreamingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingManager.swift; sourceTree = "<group>"; };
 		CC9159C22989B12000014BE4 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		CCA5EFBD2987562A00F586C1 /* ResultsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsListViewCell.swift; sourceTree = "<group>"; };
 		CCB1063F298C0F13002D6AA5 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
@@ -44,6 +51,7 @@
 		CCBC07DC298300DC00C3E20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCBC07E52983479A00C3E20D /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		CCBC07E729834E9A00C3E20D /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		E2B190107EE9B41C9B3E8B20 /* Pods-FindMyFlick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindMyFlick.release.xcconfig"; path = "Target Support Files/Pods-FindMyFlick/Pods-FindMyFlick.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +59,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3694B05C63FAD030F0872CDF /* Pods_FindMyFlick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1BE17295E618AA42825978F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AC25C1646AFFCEBEB13EB87 /* Pods_FindMyFlick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC05A88729A29B4A00864A57 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CC05A88529A29B3100864A57 /* MovieNite.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		CCBC07C2298300DB00C3E20D = {
 			isa = PBXGroup;
 			children = (
 				CCBC07CD298300DB00C3E20D /* FindMyFlick */,
 				CCBC07CC298300DB00C3E20D /* Products */,
+				DBB898BE3B41F6E5B64B6CD4 /* Pods */,
+				C1BE17295E618AA42825978F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,8 +108,8 @@
 				CCBC07E42983476000C3E20D /* Models */,
 				CCBC07E2298346E200C3E20D /* Controllers */,
 				CCBC07E32983475100C3E20D /* Views */,
+				CC05A88729A29B4A00864A57 /* fonts */,
 				CCBC07D7298300DC00C3E20D /* Assets.xcassets */,
-				CCBC07D9298300DC00C3E20D /* LaunchScreen.storyboard */,
 				CCBC07DC298300DC00C3E20D /* Info.plist */,
 			);
 			path = FindMyFlick;
@@ -104,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				CCBC07D4298300DB00C3E20D /* Main.storyboard */,
+				CCBC07D9298300DC00C3E20D /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,8 +145,18 @@
 				CCB1063F298C0F13002D6AA5 /* NetworkingManager.swift */,
 				CCB10641298C36E1002D6AA5 /* StreamingData.swift */,
 				CCB10643298C431A002D6AA5 /* StreamingModel.swift */,
+				CC5A948829A1421A002B696A /* StreamingManager.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DBB898BE3B41F6E5B64B6CD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A74DF1469C233F855E819AC6 /* Pods-FindMyFlick.debug.xcconfig */,
+				E2B190107EE9B41C9B3E8B20 /* Pods-FindMyFlick.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCBC07DF298300DC00C3E20D /* Build configuration list for PBXNativeTarget "FindMyFlick" */;
 			buildPhases = (
+				FF8C4AAB7A61F8DDD21480E4 /* [CP] Check Pods Manifest.lock */,
 				CCBC07C7298300DB00C3E20D /* Sources */,
 				CCBC07C8298300DB00C3E20D /* Frameworks */,
 				CCBC07C9298300DB00C3E20D /* Resources */,
+				1E73ED9CE222D733286562C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,11 +222,54 @@
 				CCBC07DB298300DC00C3E20D /* LaunchScreen.storyboard in Resources */,
 				CCBC07D8298300DC00C3E20D /* Assets.xcassets in Resources */,
 				CCBC07D6298300DB00C3E20D /* Main.storyboard in Resources */,
+				CC05A88629A29B3100864A57 /* MovieNite.ttf in Resources */,
 				CC3444DB29874D8200823F39 /* ResultsListViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E73ED9CE222D733286562C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindMyFlick/Pods-FindMyFlick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindMyFlick/Pods-FindMyFlick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindMyFlick/Pods-FindMyFlick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF8C4AAB7A61F8DDD21480E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindMyFlick-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CCBC07C7298300DB00C3E20D /* Sources */ = {
@@ -194,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1261A529872F8A00B93AE7 /* MovieModel.swift in Sources */,
+				CC5A948929A1421A002B696A /* StreamingManager.swift in Sources */,
 				CCB10642298C36E1002D6AA5 /* StreamingData.swift in Sources */,
 				CCBC07E62983479A00C3E20D /* MovieData.swift in Sources */,
 				CC9159C32989B12000014BE4 /* DetailsViewController.swift in Sources */,
@@ -346,6 +430,7 @@
 		};
 		CCBC07E0298300DC00C3E20D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A74DF1469C233F855E819AC6 /* Pods-FindMyFlick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,6 +459,7 @@
 		};
 		CCBC07E1298300DC00C3E20D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2B190107EE9B41C9B3E8B20 /* Pods-FindMyFlick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
