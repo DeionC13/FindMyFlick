@@ -16,7 +16,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var movieTitle: CLTypingLabel!
     
     
-
+    @IBOutlet weak var appSymbol: UIImageView!
+    
     
     var activityView: UIActivityIndicatorView?
     var movieManager = MovieManager()
@@ -25,6 +26,9 @@ class SearchViewController: UIViewController {
     var resultsList: [Results]?
     
     override func viewDidLoad() {
+       
+        
+//        movieTitle.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor, constant: 0)
         self.view.backgroundColor = UIColor(red: 0.88, green: 0.75, blue: 0.59, alpha: 1.00)
         movieManager.delegate = self
         super.viewDidLoad()
@@ -51,9 +55,7 @@ extension SearchViewController: MovieManagerDelegate {
             
         }
     }
-    
-   
-    
+ 
     func didFailWithError(error: Error) {
         print("error updating movie" )
     }
@@ -63,19 +65,13 @@ extension SearchViewController: MovieManagerDelegate {
 extension SearchViewController: UISearchBarDelegate {
     func showActivityIndicator() {
         activityView = UIActivityIndicatorView(style: .large)
-        
-        
-        
         activityView?.color = UIColor(red: 0.18, green: 0.14, blue: 0.14, alpha: 1.00)
         activityView?.center = self.view.center
-
         self.view.addSubview(activityView!)
         activityView?.startAnimating()
     }
     func hideActivityIndicator() {
-     
             activityView?.stopAnimating()
-        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -83,15 +79,13 @@ extension SearchViewController: UISearchBarDelegate {
             searchBar.resignFirstResponder()
             movieManager.fetchMovie(for: userSearch)
             showActivityIndicator()
-            
-            
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "goToResults" {
             if let destinationVC = segue.destination as? ResultsListViewController {
-                destinationVC.results = resultsList
+            destinationVC.results = resultsList
             }
         }
     }

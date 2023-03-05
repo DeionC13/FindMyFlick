@@ -22,7 +22,7 @@ struct Result: Codable {
 //    let imdbID: String
 //    let imdbRating, imdbVoteCount, tmdbID, tmdbRating: Int
 //    let originalTitle, backdropPath: String
-//    let backdropURLs: BackdropURLs
+    let backdropURLs: BackdropURLs
 //    let genres: [Genre]
 //    let originalLanguage: OriginalLanguage
 //    let countries: [String]

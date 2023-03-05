@@ -8,9 +8,11 @@
 import Foundation
 
 struct StreamingModel {
+    
     var youtubeTrailer: String
     var overview: String
     var tagline: String
     var netflixLink: String?
     var platform: [String]?
+    var image: String?
 }

@@ -11,6 +11,4 @@ struct MovieModel {
     let movieName: String
     let movieDescription: String
     let results: [Results]
-   
-    
 }

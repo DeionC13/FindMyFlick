@@ -35,7 +35,7 @@ class ResultsListViewController: UITableViewController {
         if segue.identifier == "goToDetails" {
             if let destinationVC = segue.destination as? DetailsViewController {
                 destinationVC.currentMovie = currentMovie
-                
+               
                 
                 
             }
@@ -46,7 +46,6 @@ class ResultsListViewController: UITableViewController {
         DispatchQueue.main.async {
             if let selectedMovie = self.results?[indexPath.row] {
                 self.currentMovie = selectedMovie
-                print(selectedMovie.title)
                 self.performSegue(withIdentifier: "goToDetails", sender: self)
             }
         }
