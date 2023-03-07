@@ -14,6 +14,7 @@ protocol StreamingManagerDelegate {
 
 struct StreamingManager {
     var delegate: StreamingManagerDelegate?
+    var streamingLabels: [UIImage]?
     
     func parseJSON(_ data: Data) -> StreamingModel?{
         let decoder = JSONDecoder()

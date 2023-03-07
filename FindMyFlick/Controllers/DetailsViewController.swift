@@ -25,21 +25,11 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var movieDescription: UILabel!
     var currentMovie: Results?
 
-    @IBOutlet weak var netflixCheck: UIImageView!
-    
-    @IBOutlet weak var amazonCheck: UIImageView!
-    
-    @IBOutlet weak var disneyCheck: UIImageView!
-    
-    @IBOutlet weak var huluCheck: UIImageView!
-    
-    @IBOutlet weak var hboCheck: UIImageView!
-    
-    @IBOutlet weak var peacockCheck: UIImageView!
     
     
     @IBOutlet weak var scrollPage: UIScrollView!
     
+    @IBOutlet var labelCollection: [UIImageView]!
     
 
     public var screenWidth: CGFloat {
@@ -47,6 +37,7 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     var streamingManager = StreamingManager()
+    
  
     //MARK: - View Functions
     override func viewDidLoad() {
@@ -57,7 +48,7 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
         self.view.backgroundColor = UIColor(red: 0.88, green: 0.75, blue: 0.59, alpha: 1.00)
         
         if let movie = currentMovie {
-            self.movieTitle.text = movie.title
+//            self.movieTitle.text = movie.title
             streamingManager.performStreamingServicesRequest(for: movie.title)
         }
         scrollPage.isDirectionalLockEnabled = true
@@ -99,35 +90,38 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
 //MARK: - Streaming Manager Functions
 extension DetailsViewController: StreamingManagerDelegate {
     func didSelectMovie(_ streamingManager: StreamingManager, streamInfo: StreamingModel) {
-            self.movieDescription.text = streamInfo.overview
-            self.updateStreamingLabels(platforms: streamInfo.platform)
+//            self.movieDescription.text = streamInfo.overview
+        
+       self.getStreamingLabels(platforms: streamInfo.platform)
+       
     }
   
     func didFailWithError(error: Error) {
         
     }
     
-    func updateStreamingLabels(platforms: [String]?){
-       if let safePlatforms = platforms{
-           if safePlatforms.contains("netflix"){
-                self.netflixCheck.image = UIImage(systemName: "checkmark.seal.fill")
-            }
-             if safePlatforms.contains("hbo"){
-                 self.hboCheck.image = UIImage(systemName: "checkmark.seal.fill")
-             }
-            if safePlatforms.contains("disney"){
-                self.disneyCheck.image = UIImage(systemName: "checkmark.seal.fill")
-            }
-            if safePlatforms.contains("peacock"){
-                self.peacockCheck.image = UIImage(systemName: "checkmark.seal.fill")
-            }
-            if safePlatforms.contains("hulu"){
-                self.huluCheck.image = UIImage(systemName: "checkmark.seal.fill")
-            }
-            if safePlatforms.contains("prime"){
-                self.amazonCheck.image = UIImage(systemName: "checkmark.seal.fill")
-            }
+    func getStreamingLabels(platforms: [String]?) {
+        var images: [UIImage]?
+        var labelCounter = 0
+       if let safePlatforms = platforms {
+           for platform in safePlatforms {
+               let platformImage = UIImage(named: "\(platform)Logo")
+               if let safePlatformImage = platformImage {
+                   labelCollection[labelCounter].image = safePlatformImage
+                   images?.append(safePlatformImage)
+                   labelCounter += 1
+               }
+           }
        }
+      
+    }
+    
+    func updateStreamingLabels(with images: [UIImage]) {
+        var counter = 0
+        for image in images {
+            labelCollection[counter].image = image
+            counter += 1
+        }
     }
     
     
