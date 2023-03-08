@@ -53,7 +53,8 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
         }
         scrollPage.isDirectionalLockEnabled = true
         scrollPage.alwaysBounceVertical = true
-        scrollPage.contentSize = CGSizeMake(1000, 500)
+//        scrollPage.contentSize = CGSizeMake(300, 600)
+        scrollPage.contentSize = CGSizeMake(1000, 400)
     }
     
     override func viewWillLayoutSubviews() {
@@ -90,7 +91,7 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
 //MARK: - Streaming Manager Functions
 extension DetailsViewController: StreamingManagerDelegate {
     func didSelectMovie(_ streamingManager: StreamingManager, streamInfo: StreamingModel) {
-//            self.movieDescription.text = streamInfo.overview
+            self.movieDescription.text = streamInfo.overview
         
        self.getStreamingLabels(platforms: streamInfo.platform)
        
