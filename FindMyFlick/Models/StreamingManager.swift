@@ -16,49 +16,61 @@ struct StreamingManager {
     var delegate: StreamingManagerDelegate?
     var streamingLabels: [UIImage]?
     
-    func parseJSON(_ data: Data) -> StreamingModel?{
+    func parseJSON(data: Data, for name: String) -> StreamingModel?{
         let decoder = JSONDecoder()
         var streamingPlatform: [String] = []
         var watchLink: String?
+        var model: StreamingModel?
+        
         do {
             let decodedData = try decoder.decode(StreamingData.self, from: data)
-            let trailer = decodedData.result[0].youtubeTrailerVideoLink
-            let overview = decodedData.result[0].overview
-            let tagline = decodedData.result[0].tagline
-            let results = decodedData.result
-            let image = decodedData.result[0].backdropURLs.original
             
-            if let country = decodedData.result[0].streamingInfo.us {
-                
-                if country.netflix != nil {
-                    streamingPlatform.append("netflix")
+        outerLoop: for item in decodedData.result {
+            
+                if item.title == name {
+                    let title = item.title
+                    let trailer = item.youtubeTrailerVideoLink
+                    let overview = item.overview
+                    let tagline = item.tagline
+                    let results = item
+                    let image = item.backdropURLs.original
+                    if let country = item.streamingInfo.us {
+                                    
+                                    if country.netflix != nil {
+                                        streamingPlatform.append("netflix")
+                                    }
+                                    if country.hbo != nil {
+                                        streamingPlatform.append("hbo")
+                                    }
+                                    if country.hulu != nil {
+                                        streamingPlatform.append("hulu")
+                                    }
+                                    if country.apple != nil {
+                                        streamingPlatform.append("apple")
+                                    }
+                                    if country.prime != nil {
+                                        streamingPlatform.append("prime")
+                                    }
+                                    if country.disney != nil {
+                                        streamingPlatform.append("disney")
+                                    }
+                                    if country.peacock != nil {
+                                        streamingPlatform.append("peacock")
+                                    }
+                        let streamingPlatformInfo = StreamingModel(title: title, youtubeTrailer: trailer, overview: overview, tagline: tagline, platform: streamingPlatform, image: image)
+                                    model = streamingPlatformInfo
+                                }
+                    break outerLoop
                 }
-                if country.hbo != nil {
-                    streamingPlatform.append("hbo")
-                }
-                if country.hulu != nil {
-                    streamingPlatform.append("hulu")
-                }
-                if country.apple != nil {
-                    streamingPlatform.append("apple")
-                }
-                if country.prime != nil {
-                    streamingPlatform.append("prime")
-                }
-                if country.disney != nil {
-                    streamingPlatform.append("disney")
-                }
-                if country.peacock != nil {
-                    streamingPlatform.append("peacock")
-                }
-                
             }
-            let streamingPlatformInfo = StreamingModel(youtubeTrailer: trailer, overview: overview, tagline: tagline, platform: streamingPlatform, image: image)
-            return streamingPlatformInfo
+
+            
+            
         } catch {
             print(error)
             return nil
         }
+        return model
     }
     
     func performStreamingServicesRequest(for name: String) {
@@ -82,7 +94,7 @@ struct StreamingManager {
                 return
             }
             if let data = data,
-               let streamInfo = parseJSON(data) {
+               let streamInfo = parseJSON(data: data, for: name) {
                 DispatchQueue.main.async{
                     self.delegate?.didSelectMovie(self, streamInfo: streamInfo)
                 }

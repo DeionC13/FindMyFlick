@@ -34,10 +34,7 @@ class ResultsListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetails" {
             if let destinationVC = segue.destination as? DetailsViewController {
-                destinationVC.currentMovie = currentMovie
-               
-                
-                
+                destinationVC.currentMovie = currentMovie      
             }
         }
     }
@@ -69,8 +66,6 @@ class ResultsListViewController: UITableViewController {
                     DispatchQueue.main.async {
                         // Create Image and Update Image View
                         cell.movieImage.image = UIImage(data: data)
-                      
-                        
                     }
                     }
                 }

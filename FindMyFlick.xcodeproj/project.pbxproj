@@ -11,6 +11,7 @@
 		CC05A88629A29B3100864A57 /* MovieNite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC05A88529A29B3100864A57 /* MovieNite.ttf */; };
 		CC1261A529872F8A00B93AE7 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1261A429872F8A00B93AE7 /* MovieModel.swift */; };
 		CC5A948929A1421A002B696A /* StreamingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5A948829A1421A002B696A /* StreamingManager.swift */; };
+		CC5E964F29BD4DAE008A54DC /* RoundedRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E964E29BD4DAE008A54DC /* RoundedRectButton.swift */; };
 		CCB10640298C0F13002D6AA5 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB1063F298C0F13002D6AA5 /* NetworkingManager.swift */; };
 		CCB10642298C36E1002D6AA5 /* StreamingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB10641298C36E1002D6AA5 /* StreamingData.swift */; };
 		CCB10644298C431A002D6AA5 /* StreamingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB10643298C431A002D6AA5 /* StreamingModel.swift */; };
@@ -34,6 +35,7 @@
 		CC05A88529A29B3100864A57 /* MovieNite.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MovieNite.ttf; sourceTree = "<group>"; };
 		CC1261A429872F8A00B93AE7 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		CC5A948829A1421A002B696A /* StreamingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingManager.swift; sourceTree = "<group>"; };
+		CC5E964E29BD4DAE008A54DC /* RoundedRectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectButton.swift; sourceTree = "<group>"; };
 		CCB1063F298C0F13002D6AA5 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		CCB10641298C36E1002D6AA5 /* StreamingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingData.swift; sourceTree = "<group>"; };
 		CCB10643298C431A002D6AA5 /* StreamingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingModel.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				CCB10641298C36E1002D6AA5 /* StreamingData.swift */,
 				CCB10643298C431A002D6AA5 /* StreamingModel.swift */,
 				CC5A948829A1421A002B696A /* StreamingManager.swift */,
+				CC5E964E29BD4DAE008A54DC /* RoundedRectButton.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				CCBC07E62983479A00C3E20D /* MovieData.swift in Sources */,
 				CCB10640298C0F13002D6AA5 /* NetworkingManager.swift in Sources */,
 				CCB10644298C431A002D6AA5 /* StreamingModel.swift in Sources */,
+				CC5E964F29BD4DAE008A54DC /* RoundedRectButton.swift in Sources */,
 				CCBC07E829834E9A00C3E20D /* MovieManager.swift in Sources */,
 				CCBC07CF298300DB00C3E20D /* AppDelegate.swift in Sources */,
 				CCED51FA29AED6C10016B678 /* DetailsViewController.swift in Sources */,

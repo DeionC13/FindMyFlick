@@ -70,15 +70,24 @@ extension SearchViewController: UISearchBarDelegate {
         self.view.addSubview(activityView!)
         activityView?.startAnimating()
     }
+    func shouldValidateSearch(_ search: String) -> Bool {
+        return search.range(of: ".*[^A-Za-z0-9].*", options: .regularExpression) == nil
+    }
     func hideActivityIndicator() {
             activityView?.stopAnimating()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let userSearch = searchBar.text {
-            searchBar.resignFirstResponder()
-            movieManager.fetchMovie(for: userSearch)
-            showActivityIndicator()
+        
+            if shouldValidateSearch(userSearch){
+                searchBar.resignFirstResponder()
+                movieManager.fetchMovie(for: userSearch)
+                showActivityIndicator()
+            } else{
+                searchBar.text = ""
+                searchBar.placeholder = "Illegal characters entered. Try again"
+            }
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

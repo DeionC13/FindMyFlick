@@ -16,29 +16,27 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var movieImageStackView: UIStackView!
     
-    @IBOutlet weak var scrollPageStackView: UIStackView!
-    
     @IBOutlet weak var movieImage: UIImageView!
     
     @IBOutlet weak var movieTitle: UILabel!
     
     @IBOutlet weak var movieDescription: UILabel!
     var currentMovie: Results?
-
-    
     
     @IBOutlet weak var scrollPage: UIScrollView!
-    
-    @IBOutlet var labelCollection: [UIImageView]!
-    
 
+    
+    @IBOutlet var labelCollection: [UIButton]!
+    var labelSites = [String]()
+    
+    
     public var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
     }
     
     var streamingManager = StreamingManager()
     
- 
+    
     //MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +46,12 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
         self.view.backgroundColor = UIColor(red: 0.88, green: 0.75, blue: 0.59, alpha: 1.00)
         
         if let movie = currentMovie {
-//            self.movieTitle.text = movie.title
+            //            self.movieTitle.text = movie.title
             streamingManager.performStreamingServicesRequest(for: movie.title)
         }
         scrollPage.isDirectionalLockEnabled = true
         scrollPage.alwaysBounceVertical = true
-//        scrollPage.contentSize = CGSizeMake(300, 600)
-        scrollPage.contentSize = CGSizeMake(1000, 400)
+        scrollPage.contentSize = CGSizeMake(1000, 600)
     }
     
     override func viewWillLayoutSubviews() {
@@ -69,7 +66,8 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
             mainStackView.axis = .vertical
         }
     }
-
+    
+    
     func updateImage(imageURL: String?) {
         
         if let url = URL(string: imageURL!){
@@ -87,43 +85,50 @@ class DetailsViewController: UIViewController, UIScrollViewDelegate {
             task.resume()
         }
     }
+    
+    
+    @IBAction func streamLabelTapped(_ sender: UIButton) {
+       
+        
+    }
+    
+    
+    
+    
 }
 //MARK: - Streaming Manager Functions
 extension DetailsViewController: StreamingManagerDelegate {
     func didSelectMovie(_ streamingManager: StreamingManager, streamInfo: StreamingModel) {
-            self.movieDescription.text = streamInfo.overview
+        self.movieDescription.text = streamInfo.overview
         
-       self.getStreamingLabels(platforms: streamInfo.platform)
-       
+        self.getStreamingLabels(platforms: streamInfo.platform)
+        
     }
-  
+    
     func didFailWithError(error: Error) {
         
     }
     
+    
     func getStreamingLabels(platforms: [String]?) {
-        var images: [UIImage]?
-        var labelCounter = 0
-       if let safePlatforms = platforms {
-           for platform in safePlatforms {
-               let platformImage = UIImage(named: "\(platform)Logo")
-               if let safePlatformImage = platformImage {
-                   labelCollection[labelCounter].image = safePlatformImage
-                   images?.append(safePlatformImage)
-                   labelCounter += 1
-               }
-           }
-       }
-      
-    }
-    
-    func updateStreamingLabels(with images: [UIImage]) {
-        var counter = 0
-        for image in images {
-            labelCollection[counter].image = image
-            counter += 1
+        
+        var images = [UIImage]()
+        var websites = [String]()
+        var collectionCounter = 0
+        if let safePlatforms = platforms {
+            for platform in safePlatforms {
+                if let platformImage = UIImage(named: "\(platform)Logo"){
+                    websites.append("https://www.\(platform).com")
+                    images.append(platformImage)
+                }
+            }
+            
+            while collectionCounter < images.count {
+                labelCollection[collectionCounter].setImage(images[collectionCounter].withRenderingMode(.alwaysOriginal), for: .normal)
+                collectionCounter += 1
+            }
         }
+        
     }
-    
     
 }

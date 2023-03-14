@@ -12,6 +12,7 @@ struct MovieData: Codable {
 }
 
 struct Results: Codable {
+    var id: String
     var title: String
     var description: String
     var image: String

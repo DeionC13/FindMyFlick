@@ -8,7 +8,7 @@
 import Foundation
 
 struct StreamingModel {
-    
+    var title: String
     var youtubeTrailer: String
     var overview: String
     var tagline: String
